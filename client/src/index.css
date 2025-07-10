@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(240, 15%, 8%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 8%, 15%);
+  --muted-foreground: hsl(240, 5%, 65%);
+  --popover: hsl(240, 15%, 8%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 12%, 12%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 8%, 20%);
+  --input: hsl(240, 8%, 20%);
+  --primary: hsl(266, 60%, 70%);
+  --primary-foreground: hsl(240, 15%, 8%);
+  --secondary: hsl(240, 8%, 15%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 8%, 15%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62%, 50%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(266, 60%, 70%);
+  --radius: 0.75rem;
+  
+  /* Dark soft theme colors */
+  --soft-lavender: hsl(266, 50%, 25%);
+  --gentle-blue: hsl(200, 40%, 30%);
+  --warm-pink: hsl(320, 40%, 35%);
+  --mint-green: hsl(140, 30%, 25%);
+  --gentle-coral: hsl(15, 50%, 40%);
+  --deep-purple: hsl(260, 30%, 15%);
+  --soft-white: hsl(0, 0%, 95%);
+  --accent-lavender: hsl(266, 70%, 80%);
+  --accent-pink: hsl(320, 60%, 75%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .bg-soft-lavender {
+    background-color: var(--soft-lavender);
+  }
+  
+  .bg-gentle-blue {
+    background-color: var(--gentle-blue);
+  }
+  
+  .bg-warm-pink {
+    background-color: var(--warm-pink);
+  }
+  
+  .bg-mint-green {
+    background-color: var(--mint-green);
+  }
+  
+  .bg-gentle-coral {
+    background-color: var(--gentle-coral);
+  }
+  
+  .bg-deep-purple {
+    background-color: var(--deep-purple);
+  }
+  
+  .text-soft-white {
+    color: var(--soft-white);
+  }
+  
+  .text-accent-lavender {
+    color: var(--accent-lavender);
+  }
+  
+  .text-accent-pink {
+    color: var(--accent-pink);
+  }
+  
+  .border-accent-lavender {
+    border-color: var(--accent-lavender);
+  }
+  
+  .from-soft-lavender {
+    --tw-gradient-from: var(--soft-lavender) var(--tw-gradient-from-position);
+  }
+  
+  .via-gentle-blue {
+    --tw-gradient-to: var(--gentle-blue) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--gentle-blue) var(--tw-gradient-via-position), var(--tw-gradient-to);
+  }
+  
+  .to-warm-pink {
+    --tw-gradient-to: var(--warm-pink) var(--tw-gradient-to-position);
+  }
+  
+  .from-gentle-coral {
+    --tw-gradient-from: var(--gentle-coral) var(--tw-gradient-from-position);
+  }
+  
+  .from-gentle-blue {
+    --tw-gradient-from: var(--gentle-blue) var(--tw-gradient-from-position);
+  }
+  
+  .to-mint-green {
+    --tw-gradient-to: var(--mint-green) var(--tw-gradient-to-position);
+  }
+  
+  .from-accent-lavender {
+    --tw-gradient-from: var(--accent-lavender) var(--tw-gradient-from-position);
+  }
+  
+  .to-accent-pink {
+    --tw-gradient-to: var(--accent-pink) var(--tw-gradient-to-position);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out forwards;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(186, 135, 255, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(186, 135, 255, 0.6);
+    }
+  }
+}
